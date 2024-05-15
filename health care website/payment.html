@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        /* Basic styles for demonstration purposes */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .payment-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .payment-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .payment-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-section">
+        <h2>Payment</h2>
+        <p>Your total amount is: $<span id="total-amount">0.00</span></p>
+        <button class="payment-button" onclick="processPayment()">Pay Now</button>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            let urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Set the total amount from URL parameters
+        let totalAmount = getQueryParam('total');
+        document.getElementById('total-amount').textContent = totalAmount;
+
+        function processPayment() {
+            // Add your payment processing logic here
+            alert('Payment processed successfully!');
+            // Redirect to a thank you page or another page as needed
+            window.location.href = 'thankyou.html';
+        }
+    </script>
+</body>
+</html>
